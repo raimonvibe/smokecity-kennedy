@@ -1,0 +1,664 @@
+/* 
+EDUCATIONAL NOTE: Page-Specific Styles for SmokeCity Homepage
+This file contains styles specific to the main homepage (index.html).
+It builds upon the base styles and creates the unique visual design for this page.
+*/
+
+/* 
+EDUCATIONAL NOTE: Minimal Reset
+This resets margin for all elements on this page. While base.css already does this,
+some developers prefer page-specific resets for extra certainty.
+*/
+*{
+	margin: 0;
+}
+
+/* 
+EDUCATIONAL NOTE: Hero Section with Creative Layout
+The .cover class creates the main hero section with advanced CSS techniques.
+This demonstrates several modern CSS features working together.
+*/
+.cover{
+	/* 
+	EDUCATIONAL NOTE: Background and Dimensions
+	- background-color: #000; ensures a black background even if images fail to load
+	- height: 521px; sets a fixed height for the hero section
+	- background-size: contain; would scale background images to fit (if any were added)
+	*/
+	background-color:#000;
+	height: 521px;
+	background-size: contain;
+	
+	/* 
+	EDUCATIONAL NOTE: CSS Clip-Path for Creative Layouts
+	clip-path: polygon() creates non-rectangular shapes using coordinate points.
+	This creates a slanted bottom edge instead of a straight horizontal line.
+	
+	The coordinates work as percentages:
+	- (0 0) = top-left corner
+	- (100% 0) = top-right corner  
+	- (100% 87.3%) = right side, 87.3% down from top
+	- (0 100%) = bottom-left corner
+	
+	This creates a modern, dynamic visual that's popular in contemporary web design.
+	*/
+	clip-path: polygon(0 0, 100% 0, 100% 87.3%, 0 100%);
+}
+
+/* 
+EDUCATIONAL NOTE: Navigation Item Layout Issues
+This selector demonstrates problematic CSS mixing different layout methods.
+This is kept as an educational example of what NOT to do.
+*/
+.music nav ul li{
+	/* 
+	EDUCATIONAL NOTE: Layout Method Conflicts
+	This code mixes multiple layout approaches which can cause issues:
+	- display: inline-block; for horizontal layout
+	- flex-direction: row; (only works with flexbox parent)
+	- float: right; (older layout method)
+	- justify-content: space-between; (flexbox property)
+	
+	LEARNING POINT: Choose ONE layout method and stick with it consistently.
+	*/
+	display: inline-block;
+	flex-direction: row;
+	float: right;
+	justify-content: space-between;
+	margin-right: 17px;
+	margin-top: 11.2px;
+	font-size: 16.5px;
+	font-family:aktiv-grostesk,sans-serif;
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Hover Effects for Navigation
+This creates interactive feedback when users hover over navigation items.
+*/
+.music nav ul li:hover{
+	/* 
+	EDUCATIONAL NOTE: Transition and Border Effects
+	- transition: .1s; creates a quick animation for the hover effect
+	- border-bottom: 3px solid gold; adds an underline in the brand color
+	This provides visual feedback that the element is interactive.
+	*/
+	transition: .1s;
+	border-bottom: 3px solid gold;
+}
+
+/* 
+EDUCATIONAL NOTE: Logo Styling with Issues
+This logo styling has some problems that serve as learning examples.
+*/
+.logo{
+	/* 
+	EDUCATIONAL NOTE: Incomplete Font Declaration
+	font-family:; is incomplete - this will fall back to browser defaults.
+	Always provide complete font stacks: font-family: aktiv-grostesk, sans-serif;
+	*/
+	font-size: 28px;
+	font-family:;
+	padding:0 16px;
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Brand Accent Styling
+This styles the highlighted letter in the logo with special treatment.
+*/
+#gold{
+	/* 
+	EDUCATIONAL NOTE: Logo Letter Styling
+	- font-size: 35px; makes the 'M' larger than other letters
+	- color: gold; uses the brand accent color
+	- background-color: #000; ensures contrast
+	- border-radius: 10px; adds rounded corners for visual interest
+	*/
+	font-size: 35px;
+	color: gold;
+	background-color: #000;
+	border-radius: 10px;
+}
+
+/* 
+EDUCATIONAL NOTE: Hero Content Section
+The .explore section contains the main value proposition and call-to-action.
+*/
+.explore{
+	/* 
+	EDUCATIONAL NOTE: Centered Content Layout
+	- text-align: center; centers all text content horizontally
+	- margin-top: 130px; creates substantial space from header
+	- color: #fff; sets default text color for child elements
+	*/
+	text-align: center;
+	margin-top: 130px;
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Main Heading Typography
+The main heading is the most important text on the page.
+*/
+.explore #world{
+	/* 
+	EDUCATIONAL NOTE: Hero Heading Design
+	- font-size: 35px; large size creates visual hierarchy
+	- font-family: consistent with site typography
+	*/
+	font-size: 35px;
+	font-family: aktiv-grostesk,sans-serif;
+}
+
+/* 
+EDUCATIONAL NOTE: Supporting Text Styling
+The supporting paragraph provides context and should be readable.
+*/
+.explore #stars{
+	/* 
+	EDUCATIONAL NOTE: Secondary Text Design
+	- font-size: 17.5px; smaller than heading but still readable
+	- line-height: 30px; improves readability with proper spacing
+	- margin-top: 21px; creates space between heading and description
+	*/
+	font-size: 17.5px;
+	line-height: 30px;
+	font-family: aktiv-grostesk,sans-serif;
+	margin-top: 21px;
+}
+
+/* 
+EDUCATIONAL NOTE: Call-to-Action Button Design
+Buttons are critical conversion elements that need to be visually prominent.
+*/
+.explore button{
+	/* 
+	EDUCATIONAL NOTE: Button Spacing and Shape
+	- padding: 15px 29px; creates comfortable click area
+	- font-size: 17.8px; readable text size
+	- line-height: 25px; ensures proper text spacing
+	- border-radius: 25px; creates pill-shaped buttons
+	- border-style: none; removes default browser styling
+	*/
+	padding: 15px 29px;
+	font-size: 17.8px;
+	line-height: 25px;
+	border-radius: 25px;
+	border-style: none;
+	
+	/* 
+	EDUCATIONAL NOTE: Button Color Scheme
+	- background-color: gold; uses brand color for prominence
+	- color: #000; dark text on light background for contrast
+	*/
+	background-color: gold;
+	color: #000;
+	margin-top: 15px;
+	margin-left: 9px;
+}
+
+/* 
+EDUCATIONAL NOTE: Button Hover Effects
+This creates interactive feedback when users hover over buttons.
+*/
+.explore button:hover{
+	/* 
+	EDUCATIONAL NOTE: Hover State Changes
+	- background-color: #fff; changes to white on hover
+	- transition: .2s; smooth animation for the color change
+	This provides clear feedback that the button is interactive.
+	*/
+	background-color: #fff;
+	transition: .2s;
+}
+
+/* 
+EDUCATIONAL NOTE: Brand Name Highlighting
+This highlights the brand name within the main heading.
+*/
+#city{
+	color: gold;
+}
+
+/* 
+EDUCATIONAL NOTE: Feature Section Layout
+The .upload section demonstrates content + image layout patterns.
+*/
+.upload{
+	/* 
+	EDUCATIONAL NOTE: Flexbox Layout for Content Sections
+	- display: flex; creates a flexible layout container
+	- margin-top: 110px; creates space from previous section
+	- padding: 0 16px; adds horizontal padding for mobile-friendly spacing
+	*/
+	display: flex;
+	margin-top: 110px;
+	padding: 0 16px;
+}
+
+/* 
+EDUCATIONAL NOTE: Content Area Positioning
+This positions the text content within the upload section.
+*/
+.sell{
+	/* 
+	EDUCATIONAL NOTE: Vertical Alignment
+	margin-top: 90px; aligns the text content with the image vertically.
+	This creates visual balance in the flex layout.
+	*/
+	margin-top: 90px;
+}
+
+/* 
+EDUCATIONAL NOTE: Section Heading Typography
+This styles the main heading for the upload section.
+*/
+#music{
+	/* 
+	EDUCATIONAL NOTE: Section Heading Design
+	- font-size: 39px; large enough to establish hierarchy
+	- line-height: 52px; generous line height for readability
+	- font-family: consistent typography
+	*/
+	font-size: 39px;
+	font-family: aktiv-grostesk,sans-serif;
+	line-height: 52px;
+}
+
+/* 
+EDUCATIONAL NOTE: Supporting Text Layout
+This styles the descriptive text in the upload section.
+*/
+#share{
+	/* 
+	EDUCATIONAL NOTE: Text Block Styling
+	- height: 82px; fixed height for consistent layout
+	- line-height: 22.6px; controls spacing between lines
+	- font-size: 20px; readable size for body text
+	*/
+	height: 82px;
+	line-height:22.6px;
+	font-size: 20px;
+}
+
+/* 
+EDUCATIONAL NOTE: Image Sizing and Layout
+This controls the main feature image in the upload section.
+*/
+#image{
+	/* 
+	EDUCATIONAL NOTE: Fixed Image Dimensions
+	- height: 410px; sets specific height
+	- width: 904px; sets specific width
+	
+	LEARNING POINT: Fixed dimensions can cause responsive issues.
+	Consider using max-width: 100% and height: auto for better responsiveness.
+	*/
+	height: 410px;
+	width: 904px;
+}
+
+/* 
+EDUCATIONAL NOTE: Section Button Styling
+This styles buttons within the upload section.
+*/
+.sell button{
+	/* 
+	EDUCATIONAL NOTE: Consistent Button Design
+	Similar styling to hero buttons but with slight variations:
+	- padding: 15px 30px; slightly different proportions
+	- border-radius: 19px; less rounded than hero buttons
+	*/
+	padding: 15px 30px;
+	border-radius: 19px;
+	background-color: gold;
+	font-size: 17.8px;
+	border-style: none;
+}
+
+/* 
+EDUCATIONAL NOTE: Section Button Hover Effects
+Consistent hover behavior across all buttons.
+*/
+.sell button:hover{
+	background-color: #fff;
+	transition: .2s;
+}
+
+/* 
+EDUCATIONAL NOTE: Search Form Positioning
+This positions the search form within the header layout.
+*/
+.search{
+	/* 
+	EDUCATIONAL NOTE: Search Form Layout
+	- margin-left: 150px; pushes search form to the right
+	- text-align: center; centers content within the search area
+	- margin-top: -20px; fine-tunes vertical alignment
+	*/
+	margin-left: 150px;
+	text-align: center;
+	margin-top: -20px;
+}
+
+/* 
+EDUCATIONAL NOTE: Search Input Styling
+This creates the visual design for the search input field.
+*/
+#place{
+	/* 
+	EDUCATIONAL NOTE: Input Field Design
+	- padding: 13px 39px; creates comfortable input area
+	- font-size: 16.2px; readable text size
+	- border-radius: 18px; rounded corners for modern look
+	- border-style: none; removes default browser styling
+	- background-color: darkgray; provides contrast against dark theme
+	*/
+	padding: 13px 39px;
+	font-size: 16.2px;
+	border-radius: 18px;
+	border-style: none;
+	background-color: darkgray;
+}
+
+/* 
+EDUCATIONAL NOTE: Search Icon Positioning
+This positions the search icon within the input field.
+*/
+#gray{
+	/* 
+	EDUCATIONAL NOTE: Icon Positioning Technique
+	- color: gold; uses brand color for the icon
+	- position: absolute; removes from normal flow for precise positioning
+	- margin-top: 13px; vertical positioning within input
+	- padding-left: 13px; horizontal positioning within input
+	*/
+	color:gold;
+	position: absolute;
+	margin-top: 13px;
+	padding-left: 13px;
+}
+
+/* 
+EDUCATIONAL NOTE: Special Image Styling
+This provides special styling for one specific album cover.
+*/
+#mack{
+	/* 
+	EDUCATIONAL NOTE: Individual Image Customization
+	- width: 288px; height: 281px; specific dimensions
+	- border-radius: 20px; rounded corners for visual appeal
+	This demonstrates how to style individual elements differently.
+	*/
+	width: 288px;
+	height: 281px;
+	border-radius: 20px;
+}
+
+/* 
+EDUCATIONAL NOTE: Special Image Hover Effect
+This adds a unique hover effect to the special image.
+*/
+#mack:hover{
+	/* 
+	EDUCATIONAL NOTE: Advanced Transition Effect
+	transition: all 2s ease-in-out; creates a slow, smooth animation
+	for any property changes on hover. The 2-second duration is quite long
+	and might feel sluggish in practice.
+	*/
+	transition: all 2s ease-in-out;
+}
+
+/* 
+EDUCATIONAL NOTE: Music Grid Layout
+This creates the layout for music item grids (songs, albums, etc.).
+*/
+.playlist{
+	/* 
+	EDUCATIONAL NOTE: Flexbox Grid Layout
+	- display: flex; creates flexible layout container
+	- margin-top: 60px; creates space from section heading
+	- justify-content: space-between; distributes items evenly
+	- padding: 0 16px; adds horizontal padding
+	- padding-bottom: 50px; creates space below the grid
+	*/
+	display: flex;
+	margin-top: 60px;
+	justify-content: space-between;
+	padding: 0 16px;
+	padding-bottom: 50px;
+}
+
+/* 
+EDUCATIONAL NOTE: Music Section Container
+This styles the container for music content sections.
+*/
+.playlist1{
+	/* 
+	EDUCATIONAL NOTE: Section Container Styling
+	- margin-top: 90px; creates space from previous sections
+	- padding: 0 17px; adds horizontal padding
+	- background-color: #000; ensures consistent dark background
+	*/
+	margin-top: 90px;
+	padding: 0 17px;
+	background-color: #000;
+}
+
+/* 
+EDUCATIONAL NOTE: Section Heading Styling
+This styles the headings for music sections (Trending Songs, etc.).
+*/
+#song{
+	/* 
+	EDUCATIONAL NOTE: Section Heading Design
+	- color: gold; uses brand color for prominence
+	- font-family: consistent typography
+	- font-size: 21px; appropriate size for section headings
+	- padding-top: 40px; creates space above the heading
+	*/
+	color: gold;
+	font-family: aktiv-grostesk,sans-serif;
+	font-size: 21px;
+	padding-top: 40px;
+}
+
+/* 
+EDUCATIONAL NOTE: Artist Name Styling
+This styles the artist names in music items.
+*/
+.feat{
+	/* 
+	EDUCATIONAL NOTE: Artist Name Typography
+	- color: #fff; white text for readability
+	- font-size: 20px; prominent but not overwhelming
+	- font-weight: bold; makes artist names stand out
+	- text-align: center; centers text under album covers
+	- margin-top: 17px; creates space between image and text
+	*/
+	color: #fff;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: aktiv-grostesk,sans-serif;
+	text-align: center;
+	margin-top: 17px;
+}
+
+/* 
+EDUCATIONAL NOTE: Song/Album Title Styling
+This styles the song or album titles in music items.
+*/
+.much{
+	/* 
+	EDUCATIONAL NOTE: Title Typography
+	- color: gold; uses brand color to distinguish from artist names
+	- font-family: consistent typography
+	- text-align: center; centers text under album covers
+	*/
+	color: gold;
+	font-family: aktiv-grostesk,sans-serif;
+	text-align: center;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Section Styling
+The footer contains secondary navigation and social links.
+*/
+.footer{
+	/* 
+	EDUCATIONAL NOTE: Footer Layout
+	- text-align: center; centers all footer content
+	- background-color: #121212; darker background to distinguish from main content
+	*/
+	text-align: center;
+	background-color: #121212;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Logo Accent
+This styles the highlighted letter in the footer logo.
+*/
+.span{
+	color: gold;
+}
+
+/* 
+EDUCATIONAL NOTE: Social Media Icons Container
+This styles the container for social media icons.
+*/
+.socials{
+	/* 
+	EDUCATIONAL NOTE: Social Icons Layout
+	- justify-content: stretch; attempts to distribute icons evenly
+	- margin-top: -25px; negative margin for positioning adjustment
+	- font-size: 76px; very large size (might be for icon fonts)
+	*/
+	justify-content: stretch;
+	margin-top: -25px;
+	font-size: 76px;
+}
+
+/* 
+EDUCATIONAL NOTE: Social Icons Hover Effect
+This adds hover effects to social media icons.
+*/
+.socials:hover{
+	/* 
+	EDUCATIONAL NOTE: Social Icon Interaction
+	color: gold; changes icon color on hover to brand color.
+	This provides visual feedback for interactive elements.
+	*/
+	color:gold;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Navigation Styling
+This styles the footer navigation links.
+*/
+.about{
+	/* 
+	EDUCATIONAL NOTE: Footer Navigation Design
+	- margin-top: 20px; creates space from social icons
+	- font-size: 21px; readable size for navigation
+	- line-height: 34px; generous spacing for readability
+	- color: gold; uses brand color for prominence
+	*/
+	margin-top: 20px;
+	font-size: 21px;
+	line-height: 34px;
+	font-family: aktiv-grostesk,sans-serif;
+	color: gold;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Navigation Hover Effect
+This adds hover effects to footer navigation.
+*/
+.about:hover{
+	/* 
+	EDUCATIONAL NOTE: Footer Link Interaction
+	color: #fff; changes to white on hover for visual feedback.
+	*/
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Action Buttons
+This styles the call-to-action buttons in the footer.
+*/
+.Account{
+	/* 
+	EDUCATIONAL NOTE: Footer Button Design
+	- padding: 15px 17px; creates clickable area
+	- font-size: 16.5px; readable text size
+	- background-color: gold; uses brand color
+	- border-radius: 18px; rounded corners
+	- border-style: none; removes default styling
+	- margin-right: 10px; creates space between buttons
+	- margin-top: 15px; creates space from navigation above
+	*/
+	padding: 15px 17px;
+	font-size: 16.5px;
+	background-color: gold;
+	border-radius: 18px;
+	border-style: none;
+	margin-right: 10px;
+	font-family: aktiv-grostesk,sans-serif;
+	margin-top: 15px;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Logo Styling
+This styles the main logo in the footer.
+*/
+.smoke{
+	/* 
+	EDUCATIONAL NOTE: Footer Logo Design
+	- font-size: 39px; large size for brand prominence
+	- font-family: consistent typography
+	- padding: 40px; generous padding around the logo
+	- color: #fff; white text for contrast
+	*/
+	font-size: 39px;
+	font-family: aktiv-grostesk,sans-serif;
+	padding: 40px;
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Footer Button Hover Effect
+This adds hover effects to footer buttons.
+*/
+.Account:hover{
+	/* 
+	EDUCATIONAL NOTE: Button Hover Feedback
+	background-color: #fff; changes to white on hover.
+	Consistent with other button hover effects throughout the site.
+	*/
+	background-color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: End of SmokeCity.css
+This file demonstrates various CSS techniques including:
+1. Flexbox layouts for modern responsive design
+2. CSS clip-path for creative visual effects
+3. Hover states for interactive feedback
+4. Typography hierarchy for content organization
+5. Color schemes for brand consistency
+
+Key learning points:
+- Avoid mixing layout methods (flexbox + float + inline-block)
+- Use consistent naming conventions
+- Provide fallback fonts in font-family declarations
+- Consider responsive design when setting fixed dimensions
+- Use transitions for smooth user interactions
+
+Next steps for improvement:
+- Add responsive media queries
+- Implement CSS custom properties for better maintainability
+- Use more semantic class names instead of IDs for styling
+- Add focus states for accessibility
+- Optimize for performance with efficient selectors
+*/

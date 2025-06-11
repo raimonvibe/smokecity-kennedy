@@ -1,0 +1,42 @@
+@import url('base.css');
+
+.navbar nav ul li{
+	float: right;
+	margin-top: -17px;
+}
+
+.gray{
+	background-color: gray;
+}
+.main{
+	text-align: center;
+	margin-top: 155px;
+	background-color:#000;
+	color: #fff;
+	margin-top: 27px;
+}
+.form{
+	display: flex;
+	padding: 0 50px;
+	margin-top: 90px;
+	justify-content: space-around;
+	background-color: #000;
+}
+.form img{
+	height: 290px;
+	width: 300px;
+	float: right;
+}
+form{
+	line-height: 70px;
+}
+label{
+	font-size: 18px;
+	color: gold;
+}
+.input{
+	padding: 12px 29px;
+	border-radius: 10px;
+	border-style: none;
+	border: 5px solid #fff;
+}

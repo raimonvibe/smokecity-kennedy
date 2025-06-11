@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- 
+EDUCATIONAL NOTE: About Page Structure
+This page demonstrates a simpler layout pattern compared to the homepage.
+It focuses on content presentation and basic flexbox layouts.
+-->
+<html lang="en">
+<head>
+	<!-- 
+	EDUCATIONAL NOTE: Page-Specific Metadata
+	Each page should have a unique, descriptive title that reflects its content.
+	This helps with SEO and user navigation when multiple tabs are open.
+	-->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Us - SmokeCity Music</title>
+	
+	<!-- 
+	EDUCATIONAL NOTE: CSS Import Strategy
+	Notice how we import base.css first for global styles, then page-specific styles.
+	This modular approach keeps styles organized and maintainable.
+	-->
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<link rel="stylesheet" type="text/css" href="about.css">
+</head>
+<body>
+<div class="music">
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="log.html">Login</a></li>
+		</ul>
+	</nav>
+	<h2>About Us</h2>
+</div>
+<div class="flex">
+	<div class="para">
+		<p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. </p>
+		<button>More</button>
+	</div>
+	<img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG11c2ljJTIwdXBsb2FkfGVufDB8fDB8fHww" alt="Music Upload Image">
+</div>
+</body>
+</html>

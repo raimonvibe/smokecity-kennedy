@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!-- 
+EDUCATIONAL NOTE: Login Page - Authentication UI Patterns
+This page demonstrates form design for user authentication.
+Login forms require special attention to security and user experience.
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- 
+	EDUCATIONAL NOTE: Login Page Title
+	Login pages should have clear, simple titles. Users often bookmark these pages.
+	-->
+	<title>Login - SmokeCity Music</title>
+	
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<link rel="stylesheet" type="text/css" href="log.css">
+</head>
+<body>
+	<!-- 
+	EDUCATIONAL NOTE: Header Navigation for Login Page
+	Even authentication pages should maintain consistent navigation to help users
+	move around the site if they need to.
+	-->
+	<header class="header">
+		<nav role="navigation" aria-label="Main navigation">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="log.html" aria-current="page">Login</a></li>
+			</ul>
+			<h4 class="log">S<span class="music">M</span>C</h4>
+		</nav>
+	</header>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Login Form Section
+	Using semantic <section> element helps screen readers understand page structure.
+	Login forms are critical UI components that need careful design.
+	-->
+	<section class="login-section" aria-labelledby="login-heading">
+		<div class="section-wrapper">
+			<div class="login-body">
+				<!-- 
+				EDUCATIONAL NOTE: Login Form Best Practices
+				Login forms should include:
+				1. Proper form action and method
+				2. Associated labels and inputs
+				3. Appropriate input types
+				4. Security considerations
+				5. Clear error handling (not implemented here but important)
+				-->
+				<form class="wrapper" action="#" method="post" aria-label="Login form">
+					<h2 id="login-heading" class="sr-only">Login to your account</h2>
+					
+					<div class="form-wrapper">
+						<div class="input-wrapper">
+							<div class="label-box">
+								<!-- 
+								EDUCATIONAL NOTE: Label Association
+								The 'for' attribute should match the input's 'id' for proper association.
+								This is crucial for accessibility and form usability.
+								-->
+								<label for="username">Username / Email</label>
+							</div>
+							<div class="input-box">
+								<!-- 
+								EDUCATIONAL NOTE: Input Type for Login
+								Consider using type="email" if you only accept emails,
+								or type="text" if you accept both usernames and emails.
+								-->
+								<input type="text" 
+									   id="username"
+									   name="username" 
+									   placeholder="username / email" 
+									   class="pad"
+									   required
+									   autocomplete="username">
+								<!-- autocomplete helps password managers and improves UX -->
+							</div>
+						</div>
+					</div>
+					
+					<div class="input-wrapper">
+						<div class="label-box">
+							<label for="password">Password</label>
+						</div>
+						<div class="input-box">
+							<!-- 
+							EDUCATIONAL NOTE: Password Input Security
+							type="password" masks the input for security.
+							autocomplete="current-password" helps password managers.
+							-->
+							<input type="password" 
+								   id="password"
+								   name="password" 
+								   placeholder="password" 
+								   class="pad"
+								   required
+								   autocomplete="current-password">
+						</div>
+					</div>
+
+					<div class="input-wrapper">
+						<div class="input-box">
+							<!-- 
+							EDUCATIONAL NOTE: Submit Button
+							Using input type="submit" vs <button type="submit"> both work.
+							Buttons offer more styling flexibility, inputs are simpler.
+							-->
+							<input type="submit" 
+								   name="login" 
+								   value="Login" 
+								   class="box"
+								   aria-label="Log in to your account">
+						</div>
+					</div>
+					
+					<!-- 
+					EDUCATIONAL NOTE: Additional Login Features
+					Consider adding these features for better UX:
+					- "Remember me" checkbox
+					- "Forgot password?" link
+					- Social login options
+					- Registration link
+					-->
+				</form>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
