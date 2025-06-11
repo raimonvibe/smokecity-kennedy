@@ -1,0 +1,77 @@
+@import url('base.css');
+
+html,body{
+	background-color: #fff;
+	font-size: 1em;
+	margin: 0px;
+	overflow-x: hidden;
+}
+.header nav ul li{
+	display: inline-block;
+	flex-direction: row;
+	float: right;
+	justify-content: space-between;
+	margin-right: 12px;
+	font-size: 16.5px;
+	font-family: aktiv-grostesk,sans-serif;
+	padding: 0 16px;
+}
+.header nav ul li a{
+	color: #fff;
+	text-decoration: none;
+}
+nav ul li{
+	margin-top: 4px;
+}
+.header{
+	background-color: #121212;
+	height: 50px;
+	margin: -16px;
+	padding: 0 16px;
+}
+.log{
+	margin-top: 16px;
+	font-size: 20px;
+	padding: 0 16px;
+	color: #fff;
+}
+.music{
+	color: gold;
+	font-size: 28px;
+}
+.login-section{
+	text-align: center;
+	margin-top: 10px;
+	line-height: 35px;
+	background-color: #000;
+	height: 510px;
+}
+.label-box{
+	font-size: 22px;
+	font-family: aktiv-grostesk,sans-serif;
+	margin-top: 5px;
+	color: #fff;
+}
+.pad{
+	padding: 10px 70px;
+	border: 2px solid gold;
+	border-radius: 5px;
+	font-size: 17px;
+	color: #000;
+	text-align: left;
+}
+.box{
+	padding: 10px 30px;
+	margin-top: 30px;
+	font-size: 17px;
+	border-style: none;
+	border-radius: 6px;
+	background-color: gold;
+	color: #000;
+}
+.box:hover{ 
+	background-color: #fff;
+}
+.login-body{
+	padding-top: 170px;
+}

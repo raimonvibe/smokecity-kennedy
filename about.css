@@ -1,0 +1,211 @@
+/* 
+EDUCATIONAL NOTE: CSS Import Method
+@import loads another CSS file into this one. While this works, it's generally better
+to link stylesheets in HTML for better performance. The HTML method allows parallel loading.
+*/
+@import url('base.css');
+
+/* 
+EDUCATIONAL NOTE: Navigation Override for About Page
+This demonstrates how to customize navigation for specific pages while maintaining
+the overall design system. Notice the mix of layout properties.
+*/
+.music nav ul li{
+	/* 
+	EDUCATIONAL NOTE: Layout Property Mixing
+	This selector combines several layout methods:
+	- display: inline-block; for horizontal layout
+	- float: right; for right alignment (older technique)
+	- flex-direction: row; (only works if parent is display: flex)
+	- justify-content: space-between; (only works with flexbox)
+	
+	LEARNING TIP: Mixing layout methods can cause conflicts. Choose one approach:
+	- Use flexbox: display: flex; on parent, then flex properties on children
+	- Use float: float properties with clearfix
+	- Use inline-block: display: inline-block; with text-align on parent
+	*/
+	display: inline-block;
+	flex-direction: row;
+	float: right;
+	justify-content: space-between;
+	margin-right: 17px;
+	margin-top: 11.2px;
+	font-size: 16.5px;
+	font-family:aktiv-grostesk,sans-serif;
+	color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Navigation Link Styling
+This styles the navigation links with hover effects.
+*/
+nav li a{
+	/* 
+	EDUCATIONAL NOTE: Link Color and Positioning
+	- color: #fff; white text for contrast against dark backgrounds
+	- margin-top: -20px; negative margin for vertical alignment adjustment
+	
+	LEARNING POINT: Negative margins can be useful for fine-tuning but use sparingly
+	as they can make layouts fragile and hard to maintain.
+	*/
+	color: #fff;
+	margin-top: -20px;
+}
+
+/* 
+EDUCATIONAL NOTE: Page Heading Styling
+This styles the main heading for the about page.
+*/
+h2{
+	/* 
+	EDUCATIONAL NOTE: Centered Heading Design
+	- text-align: center; centers the heading horizontally
+	- margin-top: 50px; creates space from the navigation above
+	- color: gold; uses the brand accent color for prominence
+	- font-size: 40px; large size establishes visual hierarchy
+	- font-family: consistent with site typography
+	*/
+	text-align: center;
+	margin-top: 50px;
+	color: gold;
+	font-size: 40px;
+	font-family:aktiv-grostesk,sans-serif;
+}
+
+/* 
+EDUCATIONAL NOTE: Content Layout Container
+This creates a flexible layout for the main content area.
+*/
+.flex{
+	/* 
+	EDUCATIONAL NOTE: Flexbox Content Layout
+	- display: flex; creates a flexible container for content and image
+	- margin-top: 91px; creates substantial space from the heading
+	
+	This layout allows content and image to sit side by side responsively.
+	*/
+	display: flex;
+	margin-top: 91px;
+}
+
+/* 
+EDUCATIONAL NOTE: Content Text Styling
+This styles the main content paragraph.
+*/
+p{
+	/* 
+	EDUCATIONAL NOTE: Text Block Layout
+	- height: 185px; sets a fixed height for the text container
+	- width: 71%; takes up most of the available width
+	- padding: 0 82px; adds horizontal padding for readability
+	- color: #fff; white text for contrast
+	- font-family: consistent typography
+	
+	LEARNING POINT: Fixed heights can cause text overflow issues.
+	Consider using min-height instead for more flexible layouts.
+	*/
+	height: 185px;
+	width: 71%;
+	padding: 0 82px;
+	color: #fff;
+	font-family: aktiv-grostesk,sans-serif;
+}
+
+/* 
+EDUCATIONAL NOTE: Image Layout in Flex Container
+This positions the image within the flexible layout.
+*/
+.flex img{
+	/* 
+	EDUCATIONAL NOTE: Image Spacing
+	padding: 0 95px; adds horizontal padding around the image.
+	This creates space between the text content and the image.
+	*/
+	padding: 0 95px;
+}
+
+/* 
+EDUCATIONAL NOTE: Call-to-Action Button
+This styles the action button on the about page.
+*/
+button{
+	/* 
+	EDUCATIONAL NOTE: Button Design Consistency
+	- padding: 12px 50px; creates comfortable click area
+	- margin-left: 82px; aligns with text content padding
+	- border-radius: 7px; slightly rounded corners
+	- border-style: none; removes default browser styling
+	- background-color: gold; uses brand color for prominence
+	- color: #fff; white text for contrast against gold background
+	- font-size: 16.6px; readable text size
+	- font-family: consistent typography
+	
+	This button follows the same design patterns as other buttons throughout the site.
+	*/
+	padding: 12px 50px;
+	margin-left: 82px;
+	border-radius: 7px;
+	border-style: none;
+	background-color: gold;
+	color: #fff;
+	font-size: 16.6px;
+	font-family: aktiv-grostesk,sans-serif;
+}
+
+/* 
+EDUCATIONAL NOTE: End of About Page Styles
+This file demonstrates:
+1. CSS imports for modular styling
+2. Page-specific navigation customization
+3. Flexbox layouts for content organization
+4. Consistent typography and color schemes
+5. Button styling patterns
+
+Key learning points:
+- Avoid mixing different layout methods in the same element
+- Use consistent spacing and typography throughout
+- Consider responsive design when using fixed dimensions
+- Maintain design system consistency across pages
+
+For improvement:
+- Add responsive media queries for mobile devices
+- Use relative units instead of fixed pixels where appropriate
+- Add hover states for interactive elements
+- Consider accessibility improvements like focus states
+*/
+nav li a{
+	color: #fff;
+	margin-top: -20px;
+}
+
+h2{
+	text-align: center;
+	margin-top: 50px;
+	color: gold;
+	font-size: 40px;
+	font-family:aktiv-grostesk,sans-serif;
+}
+.flex{
+	display: flex;
+	margin-top: 91px;
+}
+ p{
+	height: 185px;
+	width: 71%;
+	padding: 0 82px;
+	color: #fff;
+	font-family: aktiv-grostesk,sans-serif;
+}
+.flex img{
+	padding: 0 95px;
+}
+button{
+	padding: 12px 50px;
+	margin-left: 82px;
+	border-radius: 7px;
+	border-style: none;
+	background-color: gold;
+	color: #fff;
+	font-size: 16.6px;
+	font-family: aktiv-grostesk,sans-serif;
+}

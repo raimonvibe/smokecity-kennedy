@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- 
+EDUCATIONAL NOTE: Contact Page - Form Design Patterns
+This page demonstrates form design and layout techniques.
+Forms are crucial for user interaction and require careful attention to accessibility.
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- 
+	EDUCATIONAL NOTE: Contact Page SEO
+	Contact pages are important for business websites. The title should be clear
+	and include relevant keywords for local SEO if applicable.
+	-->
+	<title>Contact Us - SmokeCity Music</title>
+	
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<link rel="stylesheet" type="text/css" href="contact.css">
+</head>
+<body>
+<!-- 
+EDUCATIONAL NOTE: Contact Page Layout Structure
+This page uses a different layout approach with nested containers and form design.
+-->
+<div class="gray">
+	<div class="navbar">
+		<!-- 
+		EDUCATIONAL NOTE: Navigation Structure Issue
+		IMPORTANT: The <h3> element should not be inside the <ul>. 
+		This is semantically incorrect. The logo should be outside the list.
+		-->
+		<nav>
+			<h3>S<span>M</span>C</h3>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html" aria-current="page">Contact</a></li>
+				<li><a href="log.html">Login</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Main Content Section
+	The main content area contains the contact form and supporting image.
+	-->
+	<div class="main">
+		<h1>CONTACT US</h1>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Form and Image Layout
+		This section demonstrates a common pattern: form alongside supporting imagery.
+		-->
+		<div class="form">
+			<!-- 
+			EDUCATIONAL NOTE: Contact Form Structure
+			Forms should have proper labels, input types, and accessibility attributes.
+			This form needs improvements for better accessibility and functionality.
+			-->
+			<form action="#" method="post" aria-label="Contact form">
+				<div>
+					<!-- 
+					EDUCATIONAL NOTE: Form Label Association
+					Labels should be associated with inputs using 'for' and 'id' attributes.
+					This is crucial for screen readers and improves usability.
+					-->
+					<label for="name">Name</label>
+					<input type="text" 
+						   id="name"
+						   name="name" 
+						   placeholder="Your full name" 
+						   class="input"
+						   required
+						   aria-describedby="name-help">
+				</div>
+				<div>
+					<label for="contact">Contact</label>
+					<!-- 
+					EDUCATIONAL NOTE: Input Type Selection
+					For contact information, consider using type="email" or type="tel"
+					depending on what type of contact info you're collecting.
+					-->
+					<input type="email" 
+						   id="contact"
+						   name="contact" 
+						   placeholder="Your email address" 
+						   class="input"
+						   required>
+				</div>
+				<div>
+					<label for="office">Office</label>
+					<input type="text" 
+						   id="office"
+						   name="office" 
+						   placeholder="Office or company name" 
+						   class="input">	
+				</div>
+				
+				<!-- 
+				EDUCATIONAL NOTE: Form Submission
+				Every form should have a submit button for users to send their data.
+				-->
+				<div>
+					<button type="submit" class="submit-btn">Send Message</button>
+				</div>
+			</form>	
+			
+			<!-- 
+			EDUCATIONAL NOTE: Supporting Imagery
+			Images alongside forms can make the page more engaging and trustworthy.
+			Always include descriptive alt text.
+			-->
+			<img src="https://www.bandlab.com/web-app/images/home/hero-jaypx@2x-e6ff642156.avif" 
+				 alt="Music producer working in a professional studio environment"
+				 loading="lazy">
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- 
+EDUCATIONAL NOTE: DOCTYPE Declaration
+The DOCTYPE declaration tells the browser this is an HTML5 document.
+HTML5 is the current standard and provides semantic elements, better form controls,
+and improved accessibility features. Always include this at the top of HTML files.
+-->
+<html lang="en">
+<!-- 
+EDUCATIONAL NOTE: HTML Element with Language
+The 'lang' attribute specifies the document language for screen readers and search engines.
+This improves accessibility and SEO. Always include the appropriate language code.
+-->
+<head>
+	<!-- 
+	EDUCATIONAL NOTE: Document Metadata
+	The <head> section contains metadata about the document that isn't displayed on the page.
+	This includes the title, stylesheets, scripts, and other important information for browsers.
+	-->
+	<meta charset="UTF-8">
+	<!-- Character encoding ensures proper display of special characters -->
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- 
+	EDUCATIONAL NOTE: Viewport Meta Tag
+	This is crucial for responsive design. It tells the browser how to control the page's dimensions
+	and scaling on different devices. Without this, mobile devices will render the page at desktop width.
+	-->
+	
+	<title>SmokeCity Music - Discover Independent Artists</title>
+	<!-- 
+	EDUCATIONAL NOTE: Page Title
+	The title appears in browser tabs and search results. Make it descriptive and unique for each page.
+	Good titles improve SEO and user experience.
+	-->
+	
+	<!-- 
+	EDUCATIONAL NOTE: CSS Loading Strategy
+	We load stylesheets in order of specificity:
+	1. base.css - Global styles and resets
+	2. SmokeCity.css - Page-specific styles
+	This cascading approach keeps styles organized and maintainable.
+	-->
+	<link rel="stylesheet" type="text/css" href="base.css">
+	<link rel="stylesheet" type="text/css" href="SmokeCity.css">
+
+	<!-- 
+	EDUCATIONAL NOTE: External Font Library
+	Font Awesome provides scalable vector icons. Loading from CDN is convenient but consider
+	self-hosting for better performance and reliability in production applications.
+	-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<!-- 
+EDUCATIONAL NOTE: Document Body Structure
+The body contains all visible content. We organize it into logical sections using semantic HTML
+and meaningful class names that describe the content's purpose, not just its appearance.
+-->
+
+<!-- 
+EDUCATIONAL NOTE: Hero Section Layout
+The 'cover' class creates the main hero section. This pattern is common in modern web design
+where the first section captures attention with a large visual and call-to-action.
+-->
+<div class="cover">
+	<div class="music">
+		<!-- 
+		EDUCATIONAL NOTE: Navigation Element
+		The <nav> element is semantic HTML5 that tells screen readers and search engines
+		this section contains navigation links. Always use semantic elements when available.
+		-->
+		<nav role="navigation" aria-label="Main navigation">
+			<!-- 
+			EDUCATIONAL NOTE: Navigation List Structure
+			Using an unordered list for navigation is a best practice because:
+			1. It's semantically correct (navigation is a list of links)
+			2. Screen readers can announce the number of items
+			3. It provides a logical structure even without CSS
+			-->
+			<ul>
+				<li><a href="index.html" aria-current="page">Home</a></li>
+				<!-- aria-current="page" indicates the current page for accessibility -->
+				<li><a href="contact.html">Contact</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="log.html">Login</a></li>
+			</ul>
+			
+			<!-- 
+			EDUCATIONAL NOTE: Logo Design
+			The logo uses a heading element (h2) because it's important content.
+			The span allows us to style individual letters differently (the 'M' in gold).
+			-->
+			<h2 class="logo">S<span id="gold">M</span>C</h2>
+		</nav>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Search Form Implementation
+		Forms should always have proper labels for accessibility. The search input uses
+		type="search" which provides better mobile keyboards and semantic meaning.
+		-->
+		<form class="search" role="search" aria-label="Search music">
+			<!-- 
+			EDUCATIONAL NOTE: Icon Implementation
+			Font Awesome icons are inserted using <i> elements with specific classes.
+			aria-hidden="true" tells screen readers to ignore decorative icons.
+			-->
+			<i class="fa fa-search" aria-hidden="true" id="gray"></i>
+			<input type="search" 
+				   placeholder="search name of artist, albums and songs" 
+				   id="place"
+				   autocomplete="off"
+				   aria-label="Search for artists, albums, and songs">
+			<!-- autocomplete="off" prevents browser from suggesting previous searches -->
+		</form>
+	</div>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Hero Content Section
+	This section contains the main value proposition and call-to-action buttons.
+	The content hierarchy uses h1 for the main heading (most important on the page).
+	-->
+	<div class="explore">
+		<!-- 
+		EDUCATIONAL NOTE: Main Heading Structure
+		There should only be one h1 per page, and it should describe the page's main purpose.
+		The span allows us to style part of the heading differently (brand name in gold).
+		-->
+		<h1 id="world">Explore the World Of Music With <span id="city">SmokeCity Music.</span></h1>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Descriptive Content
+		This paragraph explains the platform's mission. The <br> tags create line breaks
+		for visual formatting, though CSS is generally preferred for layout control.
+		-->
+		<p id="stars">SmokeCity Music has been built to <br>help rising stars from all over the world who are 
+		unable to bring <br>their sound out to the world due to circumstances.</p>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Call-to-Action Buttons
+		These buttons use onclick handlers for navigation. In modern development, consider:
+		1. Using event listeners instead of inline onclick
+		2. Making buttons accessible with proper ARIA labels
+		3. Providing keyboard navigation support
+		-->
+		<button onclick="window.location.href='log.html'" 
+				aria-label="Log in to your SmokeCity account">Log In</button>
+		<button onclick="window.location.href='log.html'" 
+				aria-label="Create a new SmokeCity account">Sign Up</button>
+	</div>
+</div>
+
+<!-- 
+EDUCATIONAL NOTE: Feature Section Layout
+This section demonstrates a common web design pattern: content + image layout.
+The flexbox layout (defined in CSS) places text content alongside a supporting image.
+-->
+<section class="upload" aria-labelledby="upload-heading">
+	<!-- 
+	EDUCATIONAL NOTE: Semantic Section Element
+	Using <section> with aria-labelledby creates a landmark for screen readers.
+	This helps users navigate the page structure more easily.
+	-->
+	<div class="sell">
+		<!-- 
+		EDUCATIONAL NOTE: Heading Hierarchy
+		We use h2 for section headings (h1 is reserved for the main page heading).
+		The id allows CSS targeting and can be referenced by aria-labelledby.
+		-->
+		<h2 id="upload-heading">Upload and sell your music as an independent artist.</h2>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Content Structure
+		This paragraph explains the value proposition. Notice the corrected grammar
+		and punctuation for better readability and professionalism.
+		-->
+		<p id="share">Share and release as many singles, albums and EPs and have <br>all your commissions and 
+		royalties to yourself.</p>
+		
+		<!-- 
+		EDUCATIONAL NOTE: Action Button
+		This button should ideally link to an upload page or trigger a modal.
+		Consider adding proper event handling instead of just styling.
+		-->
+		<button type="button" aria-label="Start uploading your music for free">Upload your music for free.</button>
+	</div>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Image Implementation
+	This image uses Unsplash, a free stock photo service. In production:
+	1. Host images locally for better performance
+	2. Use responsive images with srcset for different screen sizes
+	3. Optimize image formats (WebP, AVIF) for faster loading
+	4. Always include descriptive alt text for accessibility
+	-->
+	<img src="https://plus.unsplash.com/premium_photo-1674655563727-c02fd1030f38?auto=format&fit=crop&q=60&w=500&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bXVzaWMlMjB1cGxvYWR8ZW58MHx8MHx8fDA%3D" 
+		 id="image" 
+		 alt="Music producer working on audio equipment in a professional studio"
+		 loading="lazy">
+	<!-- loading="lazy" improves performance by only loading images when they're about to be visible -->
+</section>
+
+<!-- 
+EDUCATIONAL NOTE: Music Content Sections
+This section demonstrates how to create repeating content layouts for music platforms.
+Each section follows the same pattern: heading + grid of items, making it scalable and maintainable.
+-->
+<section class="playlist1" aria-labelledby="trending-songs">
+	<!-- 
+	EDUCATIONAL NOTE: Section Heading
+	Each content section needs a clear heading. The id allows CSS targeting
+	and provides an accessible label for the section.
+	-->
+	<h3 id="trending-songs">Trending Songs</h3>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Content Grid Layout
+	This div contains a flexbox grid of music items. Each item follows the same structure:
+	image + artist name + song title. This pattern is common in music and media applications.
+	-->
+	<div class="playlist" role="list" aria-label="Trending songs list">
+		<!-- 
+		EDUCATIONAL NOTE: Music Item Structure
+		Each music item is a self-contained unit with:
+		1. Album artwork (with proper alt text)
+		2. Artist name (using appropriate heading level)
+		3. Song title (using consistent heading level)
+		Consider making these clickable links in a real application.
+		-->
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/young-nudy/56c80c3663322b3222c78ef374cad08ebf23de55e561430baf44462d55ff525f.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Okra (Trap) by Young Nudy"
+				 loading="lazy">
+			<h4 class="feat">Young Nudy</h4>
+			<h5 class="much">Okra(Trap)</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/thekidlaroi/7176a9ed8dcdfd1c89c55ebde8f46bef4ec2aedc01e103893fd2496e9a41115c.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for TOO MUCH by The Kid LAROI"
+				 loading="lazy">
+			<h4 class="feat">The Kid LAROI</h4>
+			<h5 class="much">TOO MUCH</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/youngboy-never-broke-again/6409ff07ea19f112cdfd3603fc411494341e4f212e744184694799c33222dde3.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Heard of Me by YoungBoy Never Broke Again"
+				 loading="lazy">
+			<h4 class="feat">YoungBoy Never Broke Again</h4>
+			<h5 class="much">Heard of Me</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/chris-brown/feba13bf60cb3c49f3c9f51407cbfda3e01a1d7e45b4960cefceca346743e239.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Sensational by Chris Brown featuring Davido and Lojay"
+				 loading="lazy">
+			<h4 class="feat">Chris Brown ft Davido & Lojay</h4>
+			<h5 class="much">Sensational</h5>
+		</article>
+	</div>
+
+	<!-- 
+	EDUCATIONAL NOTE: Consistent Section Pattern
+	Notice how this section follows the exact same pattern as the previous one.
+	This consistency makes the code maintainable and the user experience predictable.
+	-->
+	<h3 id="trending-albums">TRENDING ALBUMS</h3>
+	
+	<div class="playlist" role="list" aria-label="Trending albums list">
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/city-girls/3b51bfd68dd2da04560a48fd747a2ea3f71933657acb3871c40d4e3480a5e829.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for RAW by City Girls"
+				 loading="lazy">
+			<h4 class="feat">City Girls</h4>
+			<h5 class="much">RAW</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/iammayorkun/006c0f33a0e04cfa49121be31e7ee711b7895dd282655bf6f983b75a9d1c1508.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Love..For Free by Mayorkun"
+				 loading="lazy">
+			<h4 class="feat">Mayorkun</h4>
+			<h5 class="much">Love..For Free</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/ayox/40f1d6e567ff6315b1be8d9de85cfef6c10dde530376e41dfdcdf5ed62b0cb88.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Last Son Of A Widow by Ayox"
+				 loading="lazy">
+			<h4 class="feat">Ayox</h4>
+			<h5 class="much">Last Son Of A Widow</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/reece_youngking/coverart.jpg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for P2: THE BIG HEARTED BAD by A-Reece"
+				 loading="lazy">
+			<h4 class="feat">A-Reece</h4>
+			<h5 class="much">P2: THE BIG HEARTED BAD.</h5>
+		</article>
+	</div>
+
+	<!-- 
+	EDUCATIONAL NOTE: Regional Content Sections
+	This section demonstrates how to create location-specific content.
+	This pattern is common in streaming platforms that feature regional charts.
+	-->
+	<h3 id="nigeria-trending">TOP TRENDING SONGS IN NIGERIA</h3>
+	
+	<div class="playlist" role="list" aria-label="Top trending songs in Nigeria">
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/mohbad/1bc8150cf40d3f49494d268353a858ca267d2382281b24d66ec2fd55597a6f87.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Beast & Peace by Mohbad"
+				 loading="lazy">
+			<h4 class="feat">Mohbad</h4>
+			<h5 class="much">Beast & Peace</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/asakemusic/a7306b4bb0a6e0050f6f58f18ef36e710c146d2b235ba7195e49066e3050bba0.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Work Of Art by Asake"
+				 loading="lazy">
+			<h4 class="feat">Asake</h4>
+			<h5 class="much">Work Of Art</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/kizzdaniel/fe568a10d9f7b908b1d1b0e1a598b323334faeb94656ec246b492693fe7198eb.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for Maverick by Kizz Daniel"
+				 loading="lazy">
+			<h4 class="feat">Kizz Daniel</h4>
+			<h5 class="much">Maverick</h5>
+		</article>
+		
+		<article class="music-item" role="listitem">
+			<img src="https://assets.audiomack.com/burna-boy/5565c73ca7f22023b7ff412db9b251220ae9cdd5e93f6e6ff866c80ecf23ba9b.jpeg?width=600" 
+				 class="album-cover" 
+				 alt="Album cover for I Told Them by Burna Boy"
+				 loading="lazy">
+			<h4 class="feat">Burna Boy</h4>
+			<h5 class="much">I Told Them</h5>
+		</article>
+	</div>
+</section>
+
+<!-- 
+EDUCATIONAL NOTE: Footer Section
+The footer contains secondary navigation, social links, and additional actions.
+Using semantic <footer> element helps screen readers and search engines understand the page structure.
+-->
+<footer class="footer" role="contentinfo">
+	<!-- 
+	EDUCATIONAL NOTE: Footer Logo
+	The footer logo maintains brand consistency. Notice how it uses the same styling pattern
+	as the header logo but with different CSS classes for potential styling variations.
+	-->
+	<h2 class="smoke">S<span class="span">M</span>C</h2>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Social Media Links
+	Social media icons should be clickable links, not just images. Each should have:
+	1. Proper alt text describing the platform
+	2. Links to actual social media profiles
+	3. Consider opening in new tabs with rel="noopener noreferrer" for security
+	-->
+	<div class="socials" role="list" aria-label="Social media links">
+		<a href="#" aria-label="Follow us on Instagram" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/instagram-2588ed888e.svg" 
+				 alt="Instagram icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Follow us on Facebook" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/facebook-fde6a28a72.svg" 
+				 alt="Facebook icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Follow us on X (formerly Twitter)" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/x-ee63e02ecd.svg" 
+				 alt="X (Twitter) icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Follow us on TikTok" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/tiktok-6c8adc9dac.svg" 
+				 alt="TikTok icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Join our Discord server" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/discord-c15562bb61.svg" 
+				 alt="Discord icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Follow us on Reddit" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/reddit-156593e406.svg" 
+				 alt="Reddit icon" 
+				 loading="lazy">
+		</a>
+		<a href="#" aria-label="Subscribe to our YouTube channel" role="listitem">
+			<img src="https://www.bandlab.com/web-app/images/home/youtube-c787203ce1.svg" 
+				 alt="YouTube icon" 
+				 loading="lazy">
+		</a>
+	</div>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Footer Navigation
+	Footer navigation typically contains secondary links like legal pages, help, and company info.
+	These should be actual links, not just styled text.
+	-->
+	<nav class="about" role="navigation" aria-label="Footer navigation">
+		<a href="about.html">ABOUT</a>
+		<a href="#" aria-label="Get help and support">HELP</a>
+		<a href="#" aria-label="Business inquiries and partnerships">BUSINESS INQUIRIES</a>
+		<a href="#" aria-label="Download creator app">CREATOR APP</a>
+	</nav>
+	
+	<!-- 
+	EDUCATIONAL NOTE: Call-to-Action Buttons
+	Footer CTAs provide additional opportunities for user engagement.
+	Consider making these more prominent or using different styling to distinguish from navigation.
+	-->
+	<div class="footer-actions">
+		<button class="Account" 
+				onclick="window.location.href='log.html'" 
+				aria-label="Create a new SmokeCity account">Create an Account</button>
+		<button class="Account" 
+				aria-label="Download the SmokeCity mobile app">Download App</button>
+	</div>
+</footer>
+
+</body>
+<!-- 
+EDUCATIONAL NOTE: End of Document
+This closes the HTML document. Key takeaways from this page structure:
+
+1. **Semantic HTML**: Used proper elements like <nav>, <section>, <footer>, <article>
+2. **Accessibility**: Added ARIA labels, proper alt text, and screen reader support
+3. **SEO Optimization**: Proper heading hierarchy, meta tags, and semantic structure
+4. **Performance**: Lazy loading images, optimized external resources
+5. **Maintainability**: Consistent patterns, meaningful class names, organized structure
+
+Next steps for learning:
+- Study the CSS files to understand how these HTML elements are styled
+- Learn about responsive design in the media queries
+- Explore JavaScript for interactive functionality
+- Consider modern frameworks like React or Vue for dynamic content
+-->
+</html>

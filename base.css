@@ -1,0 +1,261 @@
+/* 
+EDUCATIONAL NOTE: CSS Reset and Base Styles
+This file contains the foundational styles that apply across the entire website.
+Understanding these concepts is crucial for consistent, maintainable CSS.
+*/
+
+/* 
+EDUCATIONAL NOTE: Universal Reset
+The universal selector (*) applies these styles to every element on the page.
+This is called a "CSS Reset" and solves browser inconsistencies:
+
+- margin: 0; padding: 0; removes default spacing that varies between browsers
+- box-sizing: border-box; makes width/height calculations include padding and borders
+  This makes layout calculations much more predictable and intuitive.
+
+Alternative: Consider using a more comprehensive reset like Normalize.css for production
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+EDUCATIONAL NOTE: Body Element Styling
+The body element sets the foundation for the entire page appearance.
+These properties cascade down to all child elements unless overridden.
+*/
+body {
+    /* 
+    EDUCATIONAL NOTE: Font Stack
+    Font stacks provide fallbacks if the primary font fails to load:
+    1. aktiv-grostesk - Custom font (must be loaded separately)
+    2. sans-serif - Generic fallback that uses the system's default sans-serif font
+    
+    Always include a generic fallback (serif, sans-serif, monospace, etc.)
+    */
+    font-family: aktiv-grostesk, sans-serif;
+    
+    /* 
+    EDUCATIONAL NOTE: Color Scheme
+    This establishes the dark theme for the music platform:
+    - Black background creates a modern, premium feel common in music apps
+    - White text ensures good contrast for readability
+    - This color scheme reduces eye strain in low-light environments
+    */
+    background-color: #000;
+    color: #fff;
+    
+    /* 
+    EDUCATIONAL NOTE: Layout Control
+    - margin: 0; removes default body margin (redundant with * reset but explicit)
+    - overflow-x: hidden; prevents horizontal scrollbars from layout issues
+      Use carefully as it can hide important content on small screens
+    */
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* 
+EDUCATIONAL NOTE: Link Styling Patterns
+These styles demonstrate how to create consistent, accessible link interactions
+throughout the website. Notice the specific selector targeting.
+*/
+
+/* 
+EDUCATIONAL NOTE: Specific Selector Targeting
+.about h4 a targets links inside h4 elements within .about containers.
+This specificity ensures these styles only apply to footer navigation links,
+not all links on the page. This is better than using !important.
+*/
+.about h4 a {
+    /* 
+    EDUCATIONAL NOTE: Brand Color Usage
+    Using 'gold' (a named CSS color) maintains consistency with the brand palette.
+    Consider using CSS custom properties (variables) for better maintainability:
+    color: var(--brand-gold, gold);
+    */
+    color: gold;
+    
+    /* 
+    EDUCATIONAL NOTE: Link Decoration
+    text-decoration: none; removes the default underline from links.
+    This creates a cleaner look but ensure links are still identifiable through
+    color, hover states, or other visual cues for accessibility.
+    */
+    text-decoration: none;
+}
+
+/* 
+EDUCATIONAL NOTE: Hover State Styling
+Hover states provide visual feedback when users interact with elements.
+This improves user experience by showing that elements are interactive.
+*/
+.about h4 a:hover {
+    /* 
+    EDUCATIONAL NOTE: Interactive Feedback
+    Changing color on hover indicates the link is interactive.
+    Consider adding transition properties for smoother color changes:
+    transition: color 0.2s ease;
+    */
+    color: #fff;
+}
+
+/* 
+EDUCATIONAL NOTE: Navigation Styling Fundamentals
+Navigation is one of the most important UI components. These styles create
+a horizontal navigation bar that's both functional and accessible.
+*/
+
+/* 
+EDUCATIONAL NOTE: List Reset for Navigation
+By default, <ul> elements have bullets and padding. For navigation:
+- list-style: none; removes the bullet points
+- margin/padding: 0; removes default spacing for precise control
+This creates a clean foundation for horizontal navigation.
+*/
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+EDUCATIONAL NOTE: Navigation Item Layout
+These styles transform vertical list items into a horizontal navigation:
+- display: inline-block; makes items sit side by side while maintaining block properties
+- margin-right: creates consistent spacing between navigation items
+- margin-top: fine-tunes vertical alignment with other header elements
+- font-size/font-family: ensures consistent typography across the navigation
+*/
+nav ul li {
+    display: inline-block;
+    margin-right: 17px;
+    margin-top: 11.2px;
+    font-size: 16.5px;
+    font-family: aktiv-grostesk, sans-serif;
+}
+
+/* 
+EDUCATIONAL NOTE: Navigation Link Styling
+These styles create interactive, accessible navigation links with smooth hover effects.
+Understanding link states is crucial for good user experience.
+*/
+nav ul li a {
+    /* 
+    EDUCATIONAL NOTE: Link Color and Decoration
+    - color: #fff; makes links white to contrast against dark backgrounds
+    - text-decoration: none; removes default underlines for a cleaner look
+    - padding: creates clickable area larger than just the text (better UX)
+    */
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    
+    /* 
+    EDUCATIONAL NOTE: CSS Transitions
+    transition: all 0.3s ease; creates smooth animations when properties change.
+    This makes hover effects feel polished rather than jarring.
+    'all' means any property change will be animated over 0.3 seconds.
+    */
+    transition: all 0.3s ease;
+}
+
+/* 
+EDUCATIONAL NOTE: Hover State Design
+Hover states provide visual feedback that elements are interactive.
+This creates a gold underline effect that matches the brand colors.
+*/
+nav ul li a:hover {
+    /* 
+    EDUCATIONAL NOTE: Border Bottom Technique
+    Using border-bottom instead of text-decoration: underline gives more control:
+    - Can customize color, thickness, and style
+    - Doesn't interfere with text baseline
+    - Can be animated smoothly with CSS transitions
+    */
+    border-bottom: 3px solid gold;
+    
+    /* 
+    EDUCATIONAL NOTE: Transition Override
+    This shorter transition (0.1s) makes the hover effect feel more responsive.
+    Different transition speeds for different interactions can improve UX.
+    */
+    transition: 0.1s;
+}
+
+/* Logo Styles */
+.logo, .log, h3 {
+    font-size: 28px;
+    font-family: aktiv-grostesk, sans-serif;
+    color: #fff;
+}
+
+.logo span, .music, .navbar span {
+    color: gold;
+    font-size: 35px;
+}
+
+/* Button Styles */
+button {
+    padding: 15px 29px;
+    font-size: 17.8px;
+    border-radius: 25px;
+    border: none;
+    background-color: gold;
+    color: #000;
+    font-family: aktiv-grostesk, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+/* Form Styles */
+input[type="text"], input[type="password"], input[type="search"] {
+    font-family: aktiv-grostesk, sans-serif;
+    border-radius: 5px;
+    border: 2px solid gold;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px 30px;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    background-color: gold;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: aktiv-grostesk, sans-serif;
+}
+
+h2 {
+    color: gold;
+}
+
+/* Utility Classes */
+.gold-text {
+    color: gold;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.center-text {
+    text-align: center;
+}
