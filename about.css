@@ -1,0 +1,49 @@
+@import url('base.css');
+
+.music nav ul li{
+	display: inline-block;
+	flex-direction: row;
+	float: right;
+	justify-content: space-between;
+	margin-right: 17px;
+	margin-top: 11.2px;
+	font-size: 16.5px;
+	font-family:aktiv-grostesk,sans-serif;;
+	color: #fff;
+}
+nav li a{
+	color: #fff;
+	margin-top: -20px;
+}
+
+h2{
+	text-align: center;
+	margin-top: 50px;
+	color: gold;
+	font-size: 40px;
+	font-family:aktiv-grostesk,sans-serif;
+}
+.flex{
+	display: flex;
+	margin-top: 91px;
+}
+ p{
+	height: 185px;
+	width: 71%;
+	padding: 0 82px;
+	color: #fff;
+	font-family: aktiv-grostesk,sans-serif;
+}
+.flex img{
+	padding: 0 95px;
+}
+button{
+	padding: 12px 50px;
+	margin-left: 82px;
+	border-radius: 7px;
+	border-style: none;
+	background-color: gold;
+	color: #fff;
+	font-size: 16.6px;
+	font-family: aktiv-grostesk,sans-serif;
+}

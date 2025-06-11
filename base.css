@@ -1,0 +1,126 @@
+/* Base styles for SmokeCity Music Platform */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: aktiv-grostesk, sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Footer link styles */
+.about h4 a {
+    color: gold;
+    text-decoration: none;
+}
+
+.about h4 a:hover {
+    color: #fff;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 17px;
+    margin-top: 11.2px;
+    font-size: 16.5px;
+    font-family: aktiv-grostesk, sans-serif;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    border-bottom: 3px solid gold;
+    transition: 0.1s;
+}
+
+/* Logo Styles */
+.logo, .log, h3 {
+    font-size: 28px;
+    font-family: aktiv-grostesk, sans-serif;
+    color: #fff;
+}
+
+.logo span, .music, .navbar span {
+    color: gold;
+    font-size: 35px;
+}
+
+/* Button Styles */
+button {
+    padding: 15px 29px;
+    font-size: 17.8px;
+    border-radius: 25px;
+    border: none;
+    background-color: gold;
+    color: #000;
+    font-family: aktiv-grostesk, sans-serif;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #fff;
+}
+
+/* Form Styles */
+input[type="text"], input[type="password"], input[type="search"] {
+    font-family: aktiv-grostesk, sans-serif;
+    border-radius: 5px;
+    border: 2px solid gold;
+    padding: 10px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    padding: 10px 30px;
+    font-size: 17px;
+    border: none;
+    border-radius: 6px;
+    background-color: gold;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #fff;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-family: aktiv-grostesk, sans-serif;
+}
+
+h2 {
+    color: gold;
+}
+
+/* Utility Classes */
+.gold-text {
+    color: gold;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.center-text {
+    text-align: center;
+}
